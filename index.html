@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>加载中...</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdui/0.4.3/css/mdui.min.css" integrity="sha256-6qmBnKuMpat5q87DddBqPCow5gfT/seDX7MMCqcF23g=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/highlight.css">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/director.min.js"></script>   
+    <script src="js/ractive.min.js"></script>    
+    <script src="js/marked.min.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdui/0.4.3/js/mdui.min.js" integrity="sha256-czQNy3ygtVNeyJKT2CrwVzzDBa9VfksAad4F6y2oad4=" crossorigin="anonymous"></script>	
+    <script src="https://unpkg.com/embed-js@5.0.4/umd/embed.js"></script>
+	<script src="js/google-code-prettify/prettify.js"></script>
+	<script src="js/google-code-prettify/run_prettify.js"></script>
+    <script src="config.js"></script>
+  </head>
+  <body class="mdui-theme-accent-indigo">
+    <div class="mdui-toolbar mdui-color-theme">
+      <a href="javascript:;" onclick="mdui.snackbar('该功能还在开发中...')" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+      <span class="mdui-typo-title"><a href="#/" style="color:#000;text-decoration:none;">Eltrac's Note</a></span>
+      <div class="mdui-toolbar-spacer"></div>
+      <a href="javascript:;" onclick="document.execCommand('Refresh') " class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></a>
+    </div>
+    <main class="container">
+      <div id="container">
+	    <header>
+		  <h1></h1>
+		</header>
+		<div class="mdui-row">
+          <center class="center"><div class="loader"><div class="outer"></div><div class="middle"></div><div class="inner"></div></center>
+		</div>
+      </div>
+	</main>
+	<!-- script -->
+    <script type="text/ractive" id="listTpl">
+      {{#posts}}
+      <div class="mdui-col-sm-6"><div class="mdui-card post-item mdui-hoverable"><div class="mdui-card-content">
+	    <div class="mdui-card-primary post-title">
+          <div class="mdui-card-primary-title"><a href="#post/{{number}}" onclick="location.reload();">{{title}}</a></div>
+          <div class="mdui-card-primary-subtitle"><a href="{{user.html_url}}">{{user.login}}</a> | <span class="datetime">{{formatTime(created_at)}}</span></div>
+        </div>
+		<div class="mdui-card-content post-excerpt">
+		  {{{markdown2HTML(body)}}}
+		</div>
+		<div class="mdui-card-actions">
+		  <a href="#post/{{number}}" onclick="location.reload();" class="mdui-float-right mdui-btn mdui-ripple">开始阅读</a>
+		</div>
+      </div></div></div>
+      {{/posts}}
+    {{#prev}}<a href="#p{{page-1}}" class="prev">上一页</a>{{/prev}}
+    {{#next}}<a href="#p{{page+1}}" class="next">下一页</a>{{/next}}
+    </script>
+    <script type="text/ractive" id="detailTpl">
+    {{#post}}
+	 <div class="mdui-card post-body"><div class="mdui-card-content"><div class="mdui-typo post-content">
+     <h1 class="post-heading">{{title}}</h1>
+     <span class="create_at">
+        <a href="{{user.html_url}}">{{user.login}}</a> 
+        发表于 {{formatTime(created_at)}}</span>
+	 <div class="mdui-divider"></div>
+     <div class="content">{{{markdown2HTML(body)}}}</div>
+	 </div></div></div>
+    {{/post}}
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>
