@@ -1,8 +1,15 @@
 Ractive.DEBUG = false;
+function loadOptions() {
+	$('.banner-title').text(_config['blog_name']);
+	$('.banner-des').text(_config['blog_des']);
+	$('.footer-name').text(_config['blog_name']);
+	$('.nav-title').text(_config['nav_title']);
+}
 function index(page){
     var page = parseInt(page) || 1;
     window._G = window._G || {post: {}, postList: {}};
     $('title').html(_config['blog_name']);
+	loadOptions();
     if(_G.postList[page] != undefined){
       $('#container').html(_G.postList[page]);
       return;
@@ -57,19 +64,12 @@ function index(page){
     });
 }
 
-function highlight(){
-  $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
-}
-
 // 动态加载多说评论框的函数
 function toggleDuoshuoComments(container, id){
     var el = document.createElement('div');
     var url = window.location.href;
     el.setAttribute('data-thread-key', id);
     el.setAttribute('data-url', url);
-    DUOSHUO.EmbedThread(el);
     jQuery(container).append(el);
 }
 
@@ -102,8 +102,8 @@ function detail(id){
             });
 
             $('title').html(data.title + " | " + _config['blog_name']);
+			loadOptions()
             toggleDuoshuoComments('#container', id);
-            highlight();
         }
     });  
 

@@ -7,7 +7,6 @@
 	<!-- css -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdui/0.4.3/css/mdui.min.css" integrity="sha256-6qmBnKuMpat5q87DddBqPCow5gfT/seDX7MMCqcF23g=" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/highlight.css">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300&display=swap" rel="stylesheet"
     <!-- script -->
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
@@ -16,15 +15,13 @@
     <script src="js/marked.min.js"></script>   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdui/0.4.3/js/mdui.min.js" integrity="sha256-czQNy3ygtVNeyJKT2CrwVzzDBa9VfksAad4F6y2oad4=" crossorigin="anonymous"></script>	
     <script src="https://unpkg.com/embed-js@5.0.4/umd/embed.js"></script>
-	<script src="js/google-code-prettify/prettify.js"></script>
-	<script src="js/google-code-prettify/run_prettify.js"></script>
     <script src="config.js"></script>
   </head>
   <body class="mdui-theme-accent-indigo">
     <!-- Navigation -->
     <div class="mdui-toolbar mdui-color-theme nav">
       <a href="javascript:;" onclick="mdui.snackbar('该功能还在开发中...')" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
-      <span class="mdui-typo-title"><a href="#/" style="color:#000;text-decoration:none;">Eltrac's Note</a></span>
+      <span class="mdui-typo-title nav-title"><a href="#/" style="color:#000;text-decoration:none;">Noter</a></span>
       <div class="mdui-toolbar-spacer"></div>
       <a href="javascript:;" onclick="location.reload();" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></a>
     </div>
@@ -32,8 +29,8 @@
 	<header>
 	  <div class="banner">
 	    <div class="banner-mask banner-content">
-		  <h1>Eltrac's Note</h1>
-		  <p>写代码是热爱，写到世界充满爱</p>
+		  <h1 class="banner-title">Noter</h1>
+		  <p class="banner-des">To be a noter.</p>
 		</div>
 	  </div>
 	</header>
@@ -47,7 +44,7 @@
 	</main>
 	<!-- Footer -->
 	<footer class="footer">
-	  <p class="mdui-typo">&copy; 2019 Eltrac's Note | Under <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC BY 4.0</a> License
+	  <p class="mdui-typo">&copy; 2019 <span class="footer-name">Eltrac's Note</span> | Under <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC BY 4.0</a> License
 	  <br>Powered by <a href="https://github.com/BigCoke233/noter">Noter</a> made by <a href="https://guhub.cn">Eltrac</a></a></p>
 	</footer>
 	<!-- script -->
