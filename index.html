@@ -47,7 +47,8 @@
 	</main>
 	<!-- Footer -->
 	<footer class="footer">
-	  <p class="mdui-typo">&copy; 2019 Eltrac's Note | Under <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC BY 4.0</a> License</p>
+	  <p class="mdui-typo">&copy; 2019 Eltrac's Note | Under <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC BY 4.0</a> License
+	  <br>Powered by <a href="https://github.com/BigCoke233/noter">Noter</a> made by <a href="https://guhub.cn">Eltrac</a></a></p>
 	</footer>
 	<!-- script -->
     <script type="text/ractive" id="listTpl">
@@ -80,6 +81,15 @@
 	 </div></div></div>
     {{/post}}
     </script>
+	<script>$(document).ready(function() {  
+    $("body").bind({  
+        copy : function(){  
+           var copy = clipboardData.items.getAsString();
+           clipboardData.setData(copy + " \n © 这些内容全部来自 Eltrac's Note");
+           alert("复制成功！若使用请注明原作者及原地址！");
+        }
+    });  
+}); </script>
     <script src="app.js"></script>
   </body>
 </html>
