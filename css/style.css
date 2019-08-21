@@ -109,7 +109,13 @@ main.container {
 .post-excerpt img,
 .post-excerpt pre code,
 .post-excerpt pre,
-.post-excerpt blockquote {
+.post-excerpt blockquote,
+.post-excerpt h1,
+.post-excerpt h2,
+.post-excerpt h3,
+.post-excerpt h4,
+.post-excerpt h5,
+.post-excerpt h6 {
 	display: none;
 }
 
