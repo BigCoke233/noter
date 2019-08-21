@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>加载中...</title>
+	<!-- css -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdui/0.4.3/css/mdui.min.css" integrity="sha256-6qmBnKuMpat5q87DddBqPCow5gfT/seDX7MMCqcF23g=" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/highlight.css">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300&display=swap" rel="stylesheet"
+    <!-- script -->
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/director.min.js"></script>   
     <script src="js/ractive.min.js"></script>    
@@ -18,22 +21,34 @@
     <script src="config.js"></script>
   </head>
   <body class="mdui-theme-accent-indigo">
-    <div class="mdui-toolbar mdui-color-theme">
+    <!-- Navigation -->
+    <div class="mdui-toolbar mdui-color-theme nav">
       <a href="javascript:;" onclick="mdui.snackbar('该功能还在开发中...')" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
       <span class="mdui-typo-title"><a href="#/" style="color:#000;text-decoration:none;">Eltrac's Note</a></span>
       <div class="mdui-toolbar-spacer"></div>
       <a href="javascript:;" onclick="location.reload();" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></a>
     </div>
-    <main class="container">
+	<!-- Header  -->
+	<header>
+	  <div class="banner">
+	    <div class="banner-mask banner-content">
+		  <h1>Eltrac's Note</h1>
+		  <p>写代码是热爱，写到世界充满爱</p>
+		</div>
+	  </div>
+	</header>
+	<!-- Main(Posts) -->
+    <main class="mdui-container">
       <div id="container">
-	    <header>
-		  <h1></h1>
-		</header>
 		<div class="mdui-row">
           <center class="center"><div class="loader"><div class="outer"></div><div class="middle"></div><div class="inner"></div></center>
 		</div>
       </div>
 	</main>
+	<!-- Footer -->
+	<footer class="footer">
+	  <p class="mdui-typo">&copy; 2019 Eltrac's Note | Under <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC BY 4.0</a> License</p>
+	</footer>
 	<!-- script -->
     <script type="text/ractive" id="listTpl">
       {{#posts}}
