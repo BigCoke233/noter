@@ -133,3 +133,5 @@ var routes = {
 };
 var router = Router(routes);
 router.init('/');
+
+console.log("%c 📝 Noter %c by Eltrac ","color: #fff; margin: 1em 0; padding: 5px 0; background: #4D90FE","margin: 1em 0; padding: 5px 0; background: #efefef;");
