@@ -1,3 +1,4 @@
+语言：简体中文 | [English](README-en.md)
 # Noter
 > 📝 Be a Noter. 
 ## 介绍
