@@ -1,10 +1,10 @@
 Ractive.DEBUG = false;
-function loadOptions() {
-	$('.banner-title').text(_config['blog_name']);
-	$('.banner-des').text(_config['blog_des']);
-	$('.footer-name').text(_config['blog_name']);
-	$('.nav-title').text(_config['nav_title']);
-}
+
+//引入主题主要 js（theme.js）
+var theme_name = _config['theme'];
+$("#header-js").prepend('<script src="themes/' + theme_name + '/config.js"></script>');
+$("#header-js").prepend('<script src="themes/' + theme_name + '/theme.js"></script>');
+
 function index(page){
     var page = parseInt(page) || 1;
     window._G = window._G || {post: {}, postList: {}};
@@ -20,11 +20,11 @@ function index(page){
         data:{
             filter       : 'created',
             page         : page,
-            // access_token : _config['access_token'],
+            access_token : _config['access_token'],
             per_page     : _config['per_page']
         },
         beforeSend:function(){
-          $('#container').html('<center class="center"><div class="loader"><div class="outer"></div><div class="middle"></div><div class="inner"></div></div></center>');
+          $('#container').html(loading_animation);
         },
         success:function(data, textStatus, jqXHR){
             var link = jqXHR.getResponseHeader("Link") || "";
@@ -47,6 +47,7 @@ function index(page){
             });
             window._G.postList[page] = ractive.toHTML();
             $('#container').html(window._G.postList[page]);
+			afterLoading();
 
             //将文章列表的信息存到全局变量中，避免重复请求
             for(i in data){
@@ -66,11 +67,13 @@ function index(page){
 
 // 动态加载多说评论框的函数
 function toggleDuoshuoComments(container, id){
-    var el = document.createElement('div');
-    var url = window.location.href;
-    el.setAttribute('data-thread-key', id);
-    el.setAttribute('data-url', url);
-    jQuery(container).append(el);
+	if(_config['duoshuo_id']!=null) {
+        var el = document.createElement('div');
+        var url = window.location.href;
+        el.setAttribute('data-thread-key', id);
+        el.setAttribute('data-url', url);
+        jQuery(container).append(el);
+	}
 }
 
 function detail(id){
@@ -82,17 +85,20 @@ function detail(id){
     if(_G.post[id].body != undefined){
       $('#container').html(_G.post[id].body);
       $('title').html(_G.post[id].title);
-      toggleDuoshuoComments('#container', id);
-      highlight();
+	  if(_config['duoshuo_id']!=null) {
+          toggleDuoshuoComments('#container', id);
+	  }
+      location.reload();//防止 marked.js 解析出错
+	  afterPost();
       return;
     }
     $.ajax({
         url:"https://api.github.com/repos/"+_config['owner']+"/"+_config['repo']+"/issues/" + id,
         data:{
-            // access_token:_config['access_token']
+            access_token:_config['access_token']
         },
         beforeSend:function(){
-          $('#container').html('<center class="center"><div class="loader"><div class="outer"></div><div class="middle"></div><div class="inner"></div><center>');
+          $('#container').html(loading_animation);
         },
         success:function(data){
             var ractive = new Ractive({
@@ -102,7 +108,7 @@ function detail(id){
             });
 
             $('title').html(data.title + " | " + _config['blog_name']);
-			loadOptions()
+			loadOptions();
             toggleDuoshuoComments('#container', id);
         }
     });  

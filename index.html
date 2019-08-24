@@ -5,88 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>加载中...</title>
 	<!-- css -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdui/0.4.3/css/mdui.min.css" integrity="sha256-6qmBnKuMpat5q87DddBqPCow5gfT/seDX7MMCqcF23g=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300&display=swap" rel="stylesheet"
+    <div id="header-css"></div>
     <!-- script -->
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/director.min.js"></script>   
-    <script src="js/ractive.min.js"></script>    
-    <script src="js/marked.min.js"></script>   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdui/0.4.3/js/mdui.min.js" integrity="sha256-czQNy3ygtVNeyJKT2CrwVzzDBa9VfksAad4F6y2oad4=" crossorigin="anonymous"></script>	
-    <script src="https://unpkg.com/embed-js@5.0.4/umd/embed.js"></script>
-    <script src="config.js"></script>
+	<script src="https://unpkg.com/embed-js@5.0.4/umd/embed.js"></script>
+    <script src="assets/director.min.js"></script>   
+    <script src="assets/ractive.min.js"></script>    
+    <script src="assets/marked.min.js"></script>   
+	<script src="config.js"></script>
+	<div id="header-js"></div>
   </head>
-  <body class="mdui-theme-accent-indigo">
-    <!-- Navigation -->
-    <div class="mdui-toolbar mdui-color-theme nav">
-      <a href="javascript:;" onclick="mdui.snackbar('该功能还在开发中...')" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
-      <span class="mdui-typo-title nav-title"><a href="#/" style="color:#000;text-decoration:none;">Noter</a></span>
-      <div class="mdui-toolbar-spacer"></div>
-      <a href="javascript:;" onclick="location.reload();" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></a>
-    </div>
+  <body>
 	<!-- Header  -->
-	<header>
-	  <div class="banner">
-	    <div class="banner-mask banner-content">
-		  <h1 class="banner-title">Noter</h1>
-		  <p class="banner-des">To be a noter.</p>
-		</div>
-	  </div>
-	</header>
+	<header id="header-content"></header>
 	<!-- Main(Posts) -->
-    <main class="mdui-container">
-      <div id="container">
-		<div class="mdui-row">
-          <center class="center"><div class="loader"><div class="outer"></div><div class="middle"></div><div class="inner"></div></center>
-		</div>
-      </div>
-	</main>
+    <div class="container" id="container"><div id="container-inner">
+      <div id="loader"></div>
+    </div></div>
 	<!-- Footer -->
-	<footer class="footer">
-	  <p class="mdui-typo">&copy; 2019 <span class="footer-name">Eltrac's Note</span> | Under <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC BY 4.0</a> License
-	  <br>Powered by <a href="https://github.com/BigCoke233/noter">Noter</a> made by <a href="https://guhub.cn">Eltrac</a></a></p>
-	</footer>
+	<footer class="footer" id="footer-info"></footer>
 	<!-- script -->
-    <script type="text/ractive" id="listTpl">
-      {{#posts}}
-      <div class="mdui-col-sm-6"><div class="mdui-card post-item mdui-hoverable"><div class="mdui-card-content">
-	    <div class="mdui-card-primary post-title">
-          <div class="mdui-card-primary-title"><a href="#post/{{number}}" onclick="location.reload();">{{title}}</a></div>
-          <div class="mdui-card-primary-subtitle"><a href="{{user.html_url}}">{{user.login}}</a> | <span class="datetime">{{formatTime(created_at)}}</span></div>
-        </div>
-		<div class="mdui-card-content post-excerpt">
-		  {{{markdown2HTML(body)}}}
-		</div>
-		<div class="mdui-card-actions">
-		  <a href="#post/{{number}}" onclick="location.reload();" class="mdui-float-right mdui-btn mdui-ripple">开始阅读</a>
-		</div>
-      </div></div></div>
-      {{/posts}}
-    {{#prev}}<a href="#p{{page-1}}" class="prev">上一页</a>{{/prev}}
-    {{#next}}<a href="#p{{page+1}}" class="next">下一页</a>{{/next}}
-    </script>
-    <script type="text/ractive" id="detailTpl">
-    {{#post}}
-	 <div class="mdui-card post-body"><div class="mdui-card-content"><div class="mdui-typo post-content">
-     <h1 class="post-heading">{{title}}</h1>
-     <span class="create_at">
-        <a href="{{user.html_url}}">{{user.login}}</a> 
-        发表于 {{formatTime(created_at)}}</span>
-	 <div class="mdui-divider"></div>
-     <div class="content">{{{markdown2HTML(body)}}}</div>
-	 </div></div></div>
-    {{/post}}
-    </script>
-	<script>$(document).ready(function() {  
-    $("body").bind({  
-        copy : function(){  
-           var copy = clipboardData.items.getAsString();
-           clipboardData.setData(copy + " \n © 这些内容全部来自 Eltrac's Note");
-           alert("复制成功！若使用请注明原作者及原地址！");
-        }
-    });  
-}); </script>
+    <script type="text/ractive" id="listTpl"></script>
+    <script type="text/ractive" id="detailTpl"></script>
     <script src="app.js"></script>
   </body>
 </html>
