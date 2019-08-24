@@ -3,8 +3,8 @@
 > 📝 Be a Noter. 
 ## 介绍
 这是一个基于 [Github-issues-blog](https://github.com/wuhaoworld/github-issues-blog) 二次开发的简易写作程序，你只需要一些简单的配置就可以开始写作。  
-外观基于 mdui，通过 GitHub Api 获取 issue 数据，从而将 issues 页面内容显示在前台。  
-目前还在开发阶段，以后可能会脱离 mdui 框架，并且替换评论功能。（不过要等到我毕业之后 2333）
+通过 GitHub Api 获取 issue 数据，从而将 issues 页面内容显示在前台。可以根据文档书写自己的主题，简单易用，你只需要学会前端就好。
+目前还在开发阶段，如果有任何问题，欢迎提 issues 或者 Pull requests.
 
 ## 使用
 1. Clone/Download 项目，上传到你的仓库，或者直接 Fork 本项目
