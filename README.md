@@ -14,9 +14,13 @@
 6. 访问你的域名进行测试
 > 其他具体步骤请参考原作者文档 [README.md](https://github.com/wuhaoworld/github-issues-blog/blob/master/README.md)
 
+## 主题
+> 主题的编写请查看 [wiki](https://github.com/BigCoke233/noter/wiki)
+- Default（默认主题）
+- No more
+
 ## 演示
 - https://code.guhub.cn
-
 > 如果你使用了 Noter ，你可以通过 Pull Requests 或者 issues 告诉我，我会将你的链接放在列表中
 
 ## 版权
