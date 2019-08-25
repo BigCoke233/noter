@@ -192,9 +192,6 @@ center.center {
 }
 
 @media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
   .banner-content h1 {
 	  font-size: 40px;
   }
