@@ -197,10 +197,8 @@ center.center {
 }
 
 @media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-  .post-body {
+  .post-body,
+  .container  {
 	  width: 700px!important;
   }
   .banner-content h1 {
@@ -209,10 +207,8 @@ center.center {
 }
 
 @media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-  .post-body {
+  .post-body,
+  .container  {
 	  width: 770px!important;
 	  padding: 10px 20px;
   }
@@ -222,10 +218,8 @@ center.center {
 }
 
 @media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-  .post-body {
+  .post-body,
+  .container  {
 	  width: 900px!important;
 	  padding: 15px 30px;
   }
