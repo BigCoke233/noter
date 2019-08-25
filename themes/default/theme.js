@@ -8,6 +8,7 @@
  
 /**
  *  Content
+ *  内容
  */
 /* 头部输出 js */
 var theme_header_js = '<script src="https://cdnjs.cloudflare.com/ajax/libs/mdui/0.4.3/js/mdui.min.js" integrity="sha256-czQNy3ygtVNeyJKT2CrwVzzDBa9VfksAad4F6y2oad4=" crossorigin="anonymous"></script>';
@@ -24,25 +25,32 @@ var listTpl_content = '{{#posts}}<div class="mdui-col-sm-6"><div class="mdui-car
 /* 文章内容 */
 var detailTpl_content = '{{#post}}<main class="mdui-container"><div class="mdui-card post-body"><div class="mdui-card-content"><div class="mdui-typo post-content"><h1 class="post-heading">{{title}}</h1><span class="create_at"><a href="{{user.html_url}}">{{user.login}}</a> 发表于 {{formatTime(created_at)}}</span><div class="mdui-divider"></div><div class="content">{{{markdown2HTML(body)}}}</div></div></div></div></main>{{/post}}';
 
-/* 页脚信息 */
+/* 页脚 */
 var footer_info = '<p class="mdui-typo">&copy; 2019 <span class="footer-name">Eltrac\'s Note</span> | Under <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC BY 4.0</a> License<br>Powered by <a href="https://github.com/BigCoke233/noter">Noter</a> made by <a href="https://guhub.cn">Eltrac</a></a></p>';
 
 /* 加载动画 */
 var loading_animation = '<center class="center"><div class="loader"><div class="outer"></div><div class="middle"></div><div class="inner"></div></center>';
- 
 
-/**
- *  Libs
- */
 /* Body Class */
 var body_class = 'mdui-theme-accent-indigo';
 
+/**
+ *  Functions
+ *  函数
+ */
 /* 加载完成后 */
 var afterLoading = function() {
 	//页面加载完成后（包括文章页面）
 };
 var afterPost = function() {
 	//仅文章加载完毕后
+}
+var beforePost = function() {
+	//文章加载完毕前
+	//返回顶部
+	$('body,html').animate({scrollTop:0},500);
+	document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
 /* 加载设置 */
 var loadOptions = function() {
@@ -54,17 +62,18 @@ var loadOptions = function() {
 
 /**
  *  Script
+ *  脚本
  */
 //Grid
 $("#container").addClass("mdui-container");
 $("#container-inner").addClass("mdui-row");
-
-
+ 
 /**
+ *  Include
  *  嵌套
  */
 //输出 js
-$("#header-js").append(theme_header_js);
+$("#header-js").prepend(theme_header_js);
 //输出 css
 $("#header-css").append(theme_header_css);
 //页眉
@@ -73,7 +82,7 @@ $("#header-content").html(header_content);
 $("#listTpl").html(listTpl_content);
 //嵌套文章内容
 $("#detailTpl").html(detailTpl_content);
-//页脚信息
+//页脚
 $("#footer-info").html(footer_info);
 //加载动画
 $("#loader").html(loading_animation);
