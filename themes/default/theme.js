@@ -67,7 +67,7 @@ var loadOptions = function() {
 //Grid
 $("#container").addClass("mdui-container");
 $("#container-inner").addClass("mdui-row");
-$("#comment").addClass("mdui-container");
+$("#comment").addClass("container");
  
 /**
  *  Include
