@@ -125,7 +125,7 @@ var gitalk = new Gitalk({
   repo: _config['gitalk_repo'],
   owner: _config['owner'],
   admin: [_config['owner']],
-  id: location.pathname,
+  id: location.href,
   distractionFreeMode: false
 })
 gitalk.render('gitalk-container');
