@@ -177,6 +177,10 @@ center.center {
   }
 }
 
+.gitalk-container {
+	margin-top: 30px;
+}
+
 .gt-comment:hover {
 	box-shadow: 0 0 0 #fff;
 	-moz-box-shadow: 0 0 0 #fff;
