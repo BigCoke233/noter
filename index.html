@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>加载中...</title>
 	<!-- css -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
     <div id="header-css"></div>
     <!-- script -->
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
@@ -22,11 +23,15 @@
     <div class="container" id="container"><div id="container-inner">
       <div id="loader"></div>
     </div></div>
+	<div id="comment">
+	  <div id="gitalk-container"></div>
+	</div>
 	<!-- Footer -->
 	<footer class="footer" id="footer-info"></footer>
 	<!-- script -->
     <script type="text/ractive" id="listTpl"></script>
     <script type="text/ractive" id="detailTpl"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
