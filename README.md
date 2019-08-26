@@ -3,7 +3,6 @@
 </p>
 
 语言：简体中文 | [English](README-en.md)
-> 📝 Be a Noter. 
 ## 介绍
 这是一个基于 [Github-issues-blog](https://github.com/wuhaoworld/github-issues-blog) 二次开发的简易写作程序，你只需要一些简单的配置就可以开始写作。  
 外观基于 mdui，通过 GitHub Api 获取 issue 数据，从而将 issues 页面内容显示在前台。  
