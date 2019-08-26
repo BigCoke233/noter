@@ -193,8 +193,9 @@ center.center {
 
 .prev,
 .next {
-	height: 40px;
-	width: 40px;
+	margin-top: 30px;
+	height: 45px;
+	width: 45px;
 	padding: 0;
 	display: inline-flex;
 	align-items: center;
@@ -202,7 +203,8 @@ center.center {
 	background: rgb(77,144,254);
 	border-radius: 100%;
 	color: #fff;
-	font-size: 25px;
+	font-size: 20px;
+	font-weight: bold;
 	text-decoration: none;
 	box-shadow: 0 0 30px #ccc;
 	-moz-box-shadow: 0 0 30px #ccc;
