@@ -191,6 +191,29 @@ center.center {
 	margin: 0 auto;
 }
 
+.prev,
+.next {
+	height: 80px;
+	width: 80px;
+	padding: 0;
+	display: inline-flex;
+	align-items: center;
+    justify-content: center;
+	background: rgb(77,144,254);
+	border-radius: 100%;
+	box-shadow: 0 0 30px #ccc;
+	-moz-box-shadow: 0 0 30px #ccc;
+	-webkit-box-shadow: 0 0 30px #ccc;
+}
+
+.prev {
+	float: left
+}
+
+.next {
+	float: right
+}
+
 @media (min-width: 576px) {
   .banner-content h1 {
 	  font-size: 40px;
