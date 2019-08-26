@@ -1,9 +1,8 @@
-语言：简体中文 | [English](README-en.md)
-
 <p align="center">
   <img src="banner.png">
 </p>
 
+语言：简体中文 | [English](README-en.md)
 > 📝 Be a Noter. 
 ## 介绍
 这是一个基于 [Github-issues-blog](https://github.com/wuhaoworld/github-issues-blog) 二次开发的简易写作程序，你只需要一些简单的配置就可以开始写作。  
