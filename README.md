@@ -1,3 +1,7 @@
+> 这个项目已被迁移到 [artimes-org/Mirecho](https://github.com/artimes-org/Mirecho)，本仓库停止维护。
+> 
+> This project has been moved to [artimes-org/Mirecho](https://github.com/artimes-org/Mirecho), so this repository is out of support.
+
 <p align="center">
   <img src="banner.png">
 </p>
